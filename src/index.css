@@ -1,0 +1,15 @@
+@font-face {
+  font-family: Manrope;
+  src: url("./font/Manrope/Manrope-VariableFont_wght.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Manrope;
+}
+.container {
+  max-width: 1305px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
