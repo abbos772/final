@@ -1,0 +1,99 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  gap: 20px;
+  .banner_text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+      color: rgb(69, 69, 69);
+      font-family: Manrope;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 55px;
+      letter-spacing: 0%;
+      text-align: left;
+    }
+    .banner_check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+  }
+  .banner_boxes {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    gap: 20px;
+    overflow-x: auto;
+    width: 100%;
+    .banner_box {
+      width: 310px;
+      height: 112px;
+      box-sizing: border-box;
+      border: 1px solid rgb(217, 217, 217);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 270px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .banner {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    gap: 20px;
+    .banner_text {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h1 {
+        color: rgb(69, 69, 69);
+        font-family: Manrope;
+        font-size: 27px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 0%;
+        text-align: left;
+        width: 300px;
+      }
+      .banner_check {
+        display: none !important;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      }
+    }
+    .banner_boxes {
+      padding-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      overflow-x: auto;
+      width: 100%;
+      .banner_box {
+        width: 310px;
+        height: 112px;
+        box-sizing: border-box;
+        border: 1px solid rgb(217, 217, 217);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 270px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}

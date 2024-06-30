@@ -1,0 +1,200 @@
+.blog {
+  display: flex;
+  flex-direction: column;
+  padding-top: 90px;
+  .blog_text {
+    display: flex;
+    justify-content: space-between;
+    button {
+      width: 220px;
+      height: 50px;
+      box-sizing: border-box;
+      border: 1px solid rgb(69, 69, 69) !important;
+      cursor: pointer;
+      border-radius: 100px;
+      border: 0;
+      background: white;
+    }
+  }
+  .blog_boxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    .blog_box {
+      width: 100%;
+      max-width: 410px;
+      margin-top: 10px;
+      height: 455.5px;
+      border-bottom: 1px solid rgb(204, 204, 204);
+      opacity: 1.1;
+      .box_text {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .box_mini_text {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          h3 {
+            color: rgb(69, 69, 69);
+            font-family: Manrope;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 130%;
+            letter-spacing: 0%;
+            text-align: left;
+          }
+        }
+      }
+      p {
+        color: rgb(69, 69, 69);
+        font-family: Manrope;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 110%;
+        letter-spacing: 0%;
+        text-align: left;
+      }
+    }
+  }
+}
+.blog_big_text {
+  display: flex;
+  padding-top: 100px;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  .pp {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  h1 {
+    color: rgb(69, 69, 69);
+    font-family: Manrope;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 55px;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+  p {
+    color: rgb(69, 69, 69);
+    font-family: Manrope;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: left;
+    width: 100%;
+    max-width: 640px;
+  }
+}
+@media (max-width: 500px) {
+  .blog_big_text {
+    display: flex;
+    padding-top: 100px;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    .pp {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    h1 {
+      color: rgb(69, 69, 69);
+      font-family: Manrope;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 35px;
+      letter-spacing: 0%;
+      text-align: left;
+    }
+    p {
+      color: rgb(69, 69, 69);
+      font-family: Manrope;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 150%;
+      letter-spacing: 0%;
+      text-align: left;
+      width: 100%;
+      max-width: 640px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .blog {
+    display: flex;
+    flex-direction: column;
+    padding-top: 90px;
+    .blog_text {
+      display: flex;
+      justify-content: space-between;
+      button {
+        display: none;
+        width: 220px;
+        height: 50px;
+        box-sizing: border-box;
+        border: 1px solid rgb(69, 69, 69) !important;
+        cursor: pointer;
+        border-radius: 100px;
+        border: 0;
+        background: white;
+      }
+    }
+    .blog_boxes {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      overflow: auto;
+      width: 100%;
+      height: 100%;
+      .blog_box {
+        width: 100%;
+        max-width: 410px;
+        margin-top: 10px;
+        height: 455.5px;
+        border-bottom: 1px solid rgb(204, 204, 204);
+        opacity: 1.1;
+        .box_text {
+          padding-top: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .box_mini_text {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            h3 {
+              color: rgb(69, 69, 69);
+              font-family: Manrope;
+              font-size: 20px;
+              font-weight: 700;
+              line-height: 130%;
+              letter-spacing: 0%;
+              text-align: left;
+            }
+          }
+        }
+        p {
+          color: rgb(69, 69, 69);
+          font-family: Manrope;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 110%;
+          letter-spacing: 0%;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
