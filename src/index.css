@@ -7,9 +7,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Manrope;
+  text-decoration: none;
+  list-style: none;
 }
 .container {
-  max-width: 1305px;
+  max-width: 1340px;
   margin: 0 auto;
   box-sizing: border-box;
+  width: 100%;
+  padding: 0 16px;
 }
