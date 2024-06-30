@@ -39,7 +39,7 @@ const Caralog = () => {
               </p>
             </div>
 
-            <img src={Img1} alt="img.png" />
+            <img src={Img1} alt="img.png" className="img1" />
           </div>
           <div className="cart1">
             <div className="items">
@@ -70,17 +70,17 @@ const Caralog = () => {
               </p>
             </div>
 
-            <img src={Img4} alt="img.png" />
+            <img src={Img4} alt="img.png" className="rasm4" />
           </div>
           <div className="cart1">
             <div className="items">
-              <h3>Споты</h3>
+              <h3>Люстры</h3>
               <p>
                 От 540₽ <GoArrowRight />{" "}
               </p>
             </div>
 
-            <img src={Img5} alt="img.png" />
+            <img src={Img5} alt="img.png" className="rasm4" />
           </div>
         </div>
       </div>
