@@ -83,6 +83,7 @@ const Caralog = () => {
             <img src={Img5} alt="img.png" className="rasm4" />
           </div>
         </div>
+        <button className="btn_0">Весь каталог</button>
       </div>
     </>
   );
