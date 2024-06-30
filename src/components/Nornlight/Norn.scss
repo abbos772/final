@@ -147,7 +147,7 @@
       .norn_cart {
         width: 100%;
         max-width: calc(100% - 20px);
-        height: 320px;
+        height: 300px;
         box-sizing: border-box;
         border: 1px solid rgb(217, 217, 217);
         display: flex;
@@ -191,6 +191,7 @@
             line-height: 130%;
             letter-spacing: 0%;
             text-align: left;
+            width: 180px;
           }
         }
       }
@@ -198,9 +199,13 @@
   }
 }
 @media (max-width: 500px) {
+  .norn_cart {
+    gap: 20px !important;
+    height: 250px !important;
+  }
   .norn_carts {
     gap: 20px !important;
-    column-gap: 0px !important;
+    column-gap: 0 !important;
   }
   .norn {
     display: flex;
@@ -233,8 +238,8 @@
       }
     }
     .gr {
-      height: 50px !important;
-      width: 50px !important;
+      height: 40px !important;
+      width: 40px !important;
       border-radius: 10px;
       background: rgb(69, 69, 69);
       display: flex;
@@ -250,12 +255,16 @@
       flex-direction: column;
       gap: 20px;
       height: 100px;
+      position: relative;
       h3 {
         color: rgb(69, 69, 69);
         font-family: Manrope;
         font-size: 18px !important;
         font-weight: 700;
         line-height: 100%;
+        width: 130px;
+        position: relative;
+        left: -10px;
         letter-spacing: 0%;
         text-align: left;
       }
@@ -267,12 +276,24 @@
         line-height: 130%;
         letter-spacing: 0%;
         text-align: left;
+        position: absolute;
+        top: 100px;
+        width: 140px !important;
+        left: -10px;
       }
     }
   }
 }
-
-@media (max-width: 350px) {
+@media (max-width: 370px) {
+  .norn_cart {
+    gap: 10px !important;
+    height: 250px !important;
+    line-height: 1;
+  }
+  .norn_carts {
+    gap: 20px !important;
+    column-gap: 0 !important;
+  }
   .norn {
     display: flex;
     flex-direction: column;
@@ -282,6 +303,10 @@
       align-items: center;
       justify-content: space-between;
       padding-top: 50px;
+      h1 {
+        font-size: 28px;
+        margin: 0 auto;
+      }
       button {
         width: 220px;
         height: 50px;
@@ -299,146 +324,49 @@
         text-align: center;
       }
     }
-    .norn_carts {
-      // display: flex;
-      // align-items: center;
-      // flex-wrap: wrap;
-      // justify-content: center;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px !important;
-      padding-top: 50px;
-      .norn_cart {
-        width: 100%;
-        max-width: calc(100% - 20px);
-        height: auto;
-        box-sizing: border-box;
-        border: 1px solid rgb(217, 217, 217);
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        padding: 20px;
-        padding-top: 35px;
-        .gr {
-          width: 30px !important;
-          height: 30px !important;
-          border-radius: 10px;
-          background: rgb(69, 69, 69);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          img {
-            width: 25px !important;
-            height: 25px !important;
-          }
-        }
-        .norn_text_flex {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          height: 100px;
-          h3 {
-            color: rgb(69, 69, 69);
-            font-family: Manrope;
-            font-size: 11px !important;
-            font-weight: 700;
-            line-height: 130%;
-            letter-spacing: 0%;
-            text-align: left;
-          }
-          p {
-            color: rgb(69, 69, 69);
-            font-family: Manrope;
-            font-size: 10px !important;
-            font-weight: 400;
-            line-height: 0%;
-            letter-spacing: 0%;
-            text-align: left;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 350px) {
-  .norn {
-    display: flex;
-    flex-direction: column;
-    padding-top: 50px;
-    .norn_text {
+    .gr {
+      height: 40px !important;
+      width: 40px !important;
+      border-radius: 10px;
+      background: rgb(69, 69, 69);
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding-top: 50px;
-      button {
-        width: 220px;
-        height: 50px;
-        box-sizing: border-box;
-        border: 1px solid rgb(69, 69, 69) !important;
-        border-radius: 100px;
-        background-color: white;
-        cursor: pointer;
-        color: rgb(69, 69, 69);
-        font-family: Manrope;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 22px;
-        letter-spacing: 0%;
-        text-align: center;
-      }
-    }
-    .norn_carts {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      padding-top: 50px;
-      .norn_cart {
-        width: 100%;
-        max-width: 110px;
-        height: auto;
-        box-sizing: border-box;
-        border: 1px solid rgb(217, 217, 217);
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        padding: 20px;
-        padding-top: 35px;
-        .gr {
-          border-radius: 10px;
-          background: rgb(69, 69, 69);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          img {
-          }
-        }
-        .norn_text_flex {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          height: 100px;
-          h3 {
-            color: rgb(69, 69, 69);
-            font-family: Manrope;
-            font-size: 10px;
-            font-weight: 700;
-            line-height: 130%;
-            letter-spacing: 0%;
-            text-align: left;
-          }
-          p {
-            color: rgb(69, 69, 69);
-            font-family: Manrope;
-            font-size: 10px;
-            font-weight: 400;
-            line-height: 130%;
-            letter-spacing: 0%;
-            text-align: left;
-          }
-        }
+      img {
+        width: 30px !important;
+        height: 30px !important;
+      }
+    }
+    .norn_text_flex {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: 100px;
+      position: relative;
+      h3 {
+        color: rgb(69, 69, 69);
+        font-family: Manrope;
+        font-size: 15px !important;
+        font-weight: 700;
+        width: 110px;
+        position: relative;
+        left: -20px;
+        top: 20px;
+        letter-spacing: 0%;
+        text-align: left;
+      }
+      p {
+        color: rgb(69, 69, 69);
+        font-family: Manrope;
+        font-size: 11px !important;
+        font-weight: 400;
+        line-height: 130%;
+        letter-spacing: 0%;
+        text-align: left;
+        position: absolute;
+        top: 90px;
+        width: 120px !important;
+        left: -20px;
       }
     }
   }
