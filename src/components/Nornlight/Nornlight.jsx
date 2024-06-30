@@ -6,7 +6,7 @@ import gr3 from "./Img/gr3.png";
 import gr4 from "./Img/gr4.png";
 const Nornlight = () => {
   return (
-    <div>
+    <div className="container">
       <div className="norn">
         <div className="norn_text">
           <h1>Почему NORNLIGHT?</h1>
