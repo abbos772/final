@@ -1,9 +1,8 @@
 import React from "react";
 import "./Product.scss";
-import imga from "./img/pro.png";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 const Product = ({ data }) => {
   const Products = data?.map((el) => (
     <div>
@@ -15,13 +14,15 @@ const Product = ({ data }) => {
           <img src={el.img} width={260} alt="" />
         </div>
         <div className="product_text">
-          <h3>
-            Встраиваемый <br /> светильник Novotech
-          </h3>
+          <Link to={`product/${el.id}`}>
+            <h3>
+              {el.title} - {el.desc}
+            </h3>
+          </Link>
           <div className="price">
             <div className="price_old">
-              <p>7000₽</p>
-              <h3>6 399₽</h3>
+              <p>{el.price * 1.5}₽</p>
+              <h3>{el.price}₽</h3>
             </div>
             <button>
               <IoCartOutline />

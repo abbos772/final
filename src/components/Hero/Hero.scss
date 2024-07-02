@@ -1,3 +1,8 @@
+.swiper-pagination-horizontal {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
 .hero {
   width: 100%;
   max-width: 1500px;
@@ -11,6 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  position: relative;
   .hero_text {
     padding-bottom: 30px;
     h1 {
@@ -41,6 +47,11 @@
   }
 }
 @media (max-width: 1000px) {
+  // .swiper-pagination-horizontal {
+  //   position: absolute !important;
+  //   left: 250px !important;
+  //   bottom: 20px !important;
+  // }
   .hero {
     width: 90%;
     max-width: 1500px;
@@ -54,6 +65,7 @@
     display: flex;
     position: relative;
     flex-direction: column-reverse;
+    position: relative;
     .hero_img img {
       width: 350px;
     }
@@ -91,6 +103,12 @@
   }
 }
 @media (max-width: 768px) {
+  .swiper-pagination-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+  }
   .hero {
     width: 90%;
     max-width: 1500px;
@@ -104,6 +122,7 @@
     display: flex;
     position: relative;
     flex-direction: column-reverse;
+    position: relative;
     .hero_img img {
       width: 280px;
     }

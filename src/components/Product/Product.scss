@@ -31,7 +31,7 @@
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 80px;
-    gap: 85px;
+    gap: 60px;
     .product_box {
       width: 100%;
       max-width: 320px;
@@ -46,6 +46,7 @@
         right: 20px;
         top: 0px;
         font-size: 20px;
+        z-index: 10;
         cursor: pointer;
       }
       .product_text {

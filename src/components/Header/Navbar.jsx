@@ -5,7 +5,6 @@ import logo from "./img/logo.svg";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CiSearch, CiHeart, CiShoppingCart } from "react-icons/ci";
 import { TbAntennaBars5 } from "react-icons/tb";
-
 const Header = () => {
   let [burger, setBurger] = useState(false);
 
@@ -62,7 +61,9 @@ const Header = () => {
                     <RxHamburgerMenu />
                   </button>
                 </div>
-                <img src={logo} alt="" />
+                <Link to={"/"}>
+                  <img src={logo} alt="" />
+                </Link>
               </div>
               <div className="nav__inp">
                 <button>
