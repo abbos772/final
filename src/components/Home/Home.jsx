@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.scss";
 import Hero from "../Hero/Hero";
 import Katalog from "../Katalog/Katalog";
@@ -8,6 +8,10 @@ import Banner from "../Banner/Banner";
 import Blog from "../Blog/Blog";
 import { useGetProductsQuery } from "../context/api/ProductApi";
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { data } = useGetProductsQuery();
   return (
     <div>

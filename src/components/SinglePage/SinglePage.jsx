@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useGetProductByIdQuery } from "../context/api/ProductApi";
 import { useParams } from "react-router-dom";
 import { IoMdHeartEmpty } from "react-icons/io";
@@ -11,6 +11,10 @@ const SinglePage = () => {
     useGetProductByIdQuery(id);
   const [count, setCount] = useState(1);
   const [liked, setLiked] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (isLoadingProduct) {
     return <div>Loading...</div>;
@@ -147,20 +151,20 @@ const SinglePage = () => {
           <div className="opt_box">
             <h4>Подседельный Штырь</h4>
             <p>
-              Ritchey WCS 700 Series: Carbon Link FlexLogic / 31.6mm 900 Series:
+              Ritchey WCS 700 Series: Carbon Link FlexLogic / 31.6mm 900 Series:
               Carbon 2B SDS / 34.9mm
             </p>
           </div>
           <div className="opt_box">
             <h4>Седло</h4>
-            <p>Ritchey WCS Streem V3 Titanium rails</p>
+            <p>Ritchey WCS Streem V3 Titanium rails</p>
           </div>
           <div className="opt_box">
             <h4>Вилка</h4>
             <p>
-              Rock Shox SID RL3 Air / демпфер DNA3 3-режима / 15mm QR axle /
+              Rock Shox SID RL3 Air / демпфер DNA3 3-режима / 15mm QR axle /
               коническая рулевая труба / Удалённая блокировка, регулировка
-              отскока / ход 100mm
+              отскока / ход 100mm
             </p>
           </div>
         </div>
