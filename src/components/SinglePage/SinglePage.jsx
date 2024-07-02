@@ -75,7 +75,7 @@ const SinglePage = () => {
             <h1>{product.price * count}₽</h1>
             <p>{product.price * 1.5}₽</p>
           </div>
-          <p>
+          <p className="p_text">
             Профессиональный гоночный хардтейл для кросс-кантри уровня
             Чемпионата и Кубка Мира. Одна из самых легких рам среди гоночных
             хардтейлов для кросс-кантри.
@@ -96,6 +96,72 @@ const SinglePage = () => {
                 <IoMdHeartEmpty />
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="optimos">
+        <h1>Характеристика</h1>
+        <div className="opt_boxes">
+          <div className="opt_box">
+            <h4>Цвет</h4>
+            <p>Жёлтый</p>
+          </div>
+          <div className="opt_box">
+            <h4>Год</h4>
+            <p>2016</p>
+          </div>
+          <div className="opt_box">
+            <h4>Диаметр колеса</h4>
+            <p>27.5</p>
+          </div>
+          <div className="opt_box">
+            <h4>Материал рамы</h4>
+            <p>Карбон</p>
+          </div>
+          <div className="opt_box">
+            <h4>Размер</h4>
+            <p>L</p>
+          </div>
+          <div className="opt_box">
+            <h4>Страна</h4>
+            <p>Швейцария</p>
+          </div>
+          <div className="opt_box">
+            <h4>Производитель</h4>
+            <p>Scott</p>
+          </div>
+          <div className="opt_box">
+            <h4>Покрышки</h4>
+            <p>
+              Schwalbe Rocket Ron EVO / 2.1 127EPI Kevlar Bead Tubeless Easy /
+              PaceStar compound
+            </p>
+          </div>
+          <div className="opt_box">
+            <h4>Рама</h4>
+            <p>
+              Scale Carbon / HMX-технология / технология IMP / Коническая
+              рулевая труба / BB92 / Технология SDS / Дропауты IDS SL
+            </p>
+          </div>
+          <div className="opt_box">
+            <h4>Подседельный Штырь</h4>
+            <p>
+              Ritchey WCS 700 Series: Carbon Link FlexLogic / 31.6mm 900 Series:
+              Carbon 2B SDS / 34.9mm
+            </p>
+          </div>
+          <div className="opt_box">
+            <h4>Седло</h4>
+            <p>Ritchey WCS Streem V3 Titanium rails</p>
+          </div>
+          <div className="opt_box">
+            <h4>Вилка</h4>
+            <p>
+              Rock Shox SID RL3 Air / демпфер DNA3 3-режима / 15mm QR axle /
+              коническая рулевая труба / Удалённая блокировка, регулировка
+              отскока / ход 100mm
+            </p>
           </div>
         </div>
       </div>
