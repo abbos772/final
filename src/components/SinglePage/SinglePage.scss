@@ -222,6 +222,57 @@
   }
 }
 @media (max-width: 500px) {
+  .optimos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 200px;
+    .opt_boxes {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1301px;
+      height: 1069px;
+      .opt_box:nth-child(odd) {
+        max-height: 100%;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+        text-align: right;
+      }
+      .opt_box:nth-child(even) {
+        max-height: 100%;
+        background: rgb(248, 248, 248);
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+        text-align: right;
+        h4 {
+          color: rgb(16, 16, 16);
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 123%;
+          letter-spacing: 0%;
+          text-align: left;
+        }
+        p {
+          color: rgb(76, 76, 76);
+          width: 100%;
+          max-width: 606.5px;
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 160%;
+          letter-spacing: 1%;
+          text-align: right;
+        }
+      }
+    }
+  }
   .p_text {
     font-size: 14px;
   }
