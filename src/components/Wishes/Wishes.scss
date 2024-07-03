@@ -31,24 +31,16 @@
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 80px;
-    gap: 0px !important;
+    gap: 60px;
     .product_box {
-      box-sizing: border-box;
       width: 100%;
       max-width: 320px;
-      max-height: 340px;
+      height: 395px;
       background: rgb(255, 255, 255);
       display: flex;
       align-items: center;
       flex-direction: column;
       position: relative;
-      .pro_img {
-        box-sizing: border-box;
-        border: 1px solid rgb(221, 221, 221);
-        img {
-          object-fit: cover;
-        }
-      }
       .heart {
         position: absolute;
         right: 5px;
@@ -254,11 +246,11 @@
       align-items: center;
       grid-template-columns: 40% 40%;
       padding-top: 80px;
-      gap: 20px !important;
+      gap: 30px !important;
       .product_box {
         width: 100%;
-        max-width: 150px !important;
-        height: 279px !important;
+        max-width: 1090px !important;
+        height: 279px;
         background: rgb(255, 255, 255);
         display: flex;
         align-items: center;
@@ -266,9 +258,127 @@
         position: relative;
         .pro_img img {
           object-fit: cover;
+          width: 100%;
+          max-width: 220px !important;
+          height: 166px !important;
+        }
+        .heart {
+          position: absolute;
+          right: 0px;
+          top: 0px;
+          font-size: 20px;
+          cursor: pointer;
+        }
+        .heart {
+          position: absolute;
+          right: 0px;
+          top: 25px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        .product_text {
+          padding-top: 20px;
+          width: 90%;
 
-          max-width: 130px !important;
-          height: 50px !important;
+          h3 {
+            color: rgb(69, 69, 69);
+            font-family: Manrope;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: left;
+          }
+          .price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 20px;
+            font-size: 10px;
+
+            .price_old {
+              p {
+                text-decoration: line-through;
+              }
+              h3 {
+                color: rgb(69, 69, 69);
+                font-family: Manrope;
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 110%;
+                letter-spacing: 0%;
+                text-align: left;
+              }
+            }
+            button {
+              width: 45px;
+              height: 25px;
+              border-radius: 100px;
+              border: 0;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              font-size: 16px;
+              background: rgb(69, 69, 69);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .product_flex {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 60px;
+    .pro_text {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      button {
+        width: 220px;
+        height: 50px;
+        border: 0;
+        cursor: pointer;
+        color: rgb(69, 69, 69);
+        font-family: Manrope;
+        box-sizing: border-box;
+        border: 1px solid rgb(69, 69, 69) !important;
+        background-color: white;
+        border-radius: 100px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: 0%;
+        text-align: center;
+      }
+    }
+    .product_boxes {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: 40% 40%;
+      padding-top: 80px;
+      gap: 30px !important;
+      .product_box {
+        width: 100%;
+        max-width: 1090px !important;
+        height: 279px;
+        background: rgb(255, 255, 255);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        .pro_img img {
+          object-fit: cover;
+          width: 100%;
+          max-width: 220px !important;
+          height: 166px !important;
         }
         .heart {
           position: absolute;

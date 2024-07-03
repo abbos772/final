@@ -57,13 +57,20 @@ header {
     }
   }
   .nav__bottom {
+    .sub {
+      position: relative;
+      bottom: 20px;
+      font-size: 12px;
+    }
     display: flex;
     margin-top: 20px;
+    align-items: center;
     justify-content: space-between;
     .nav__logo {
       display: flex;
       align-items: center;
       gap: 10px;
+      padding-top: 5px;
     }
     .nav__inp {
       display: flex;

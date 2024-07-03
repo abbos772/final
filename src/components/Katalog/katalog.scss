@@ -37,6 +37,7 @@
     flex-wrap: wrap;
     gap: 20px;
     padding-top: 40px;
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
     .cart1 {
@@ -49,13 +50,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px;
+      padding: 10px;
       .items {
         display: flex;
         flex-direction: column;
-        gap: 100px;
-        padding: 20px 20px;
-
+        gap: 130px;
+        padding: 20px;
         h3 {
           font-family: Manrope;
           font-size: 20px;
@@ -101,7 +101,7 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 920px) {
   .carts {
     display: flex;
     align-items: center;
