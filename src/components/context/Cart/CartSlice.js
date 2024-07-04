@@ -25,17 +25,10 @@ const cartSlice = createSlice({
     },
 
     incrementCartQuantity(state, action) {
-      let index = state.value.findIndex((el) => el.id === action.payload.id);
-      state.value = state.value.map((item, inx) => {
-        if (index === inx) {
-          return {
-            ...item,
-            quantity: item.quantity + 1,
-          };
-        } else {
-          return item;
-        }
-      });
+      let index = state.value.findIndex((el) => el.id === action.payload);
+      if (index !== -1) {
+        state.value[index].quantity += 1;
+      }
       localStorage.setItem("cart", JSON.stringify(state.value));
     },
 
@@ -45,15 +38,12 @@ const cartSlice = createSlice({
     },
 
     decrementCart: (state, action) => {
-      let index = state.value.findIndex((i) => i.id === action.payload.id);
-      state.value = state.value.map((item, inx) =>
-        inx === index
-          ? {
-              ...item,
-              quantity: item.quantity - 1,
-            }
-          : item
-      );
+      let index = state.value.findIndex((i) => i.id === action.payload);
+      if (index !== -1 && state.value[index].quantity > 1) {
+        state.value[index].quantity -= 1;
+      } else {
+        state.value = state.value.filter((i) => i.id !== action.payload);
+      }
       localStorage.setItem("cart", JSON.stringify(state.value));
     },
 
