@@ -4,7 +4,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// import empty from "./empty.png";
+import empty from "./empty.png";
 import "./Cart.scss";
 import {
   incrementCartQuantity,
