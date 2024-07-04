@@ -192,6 +192,7 @@ const Cart = () => {
                   type="text"
                   name="fname"
                   placeholder="ФИО"
+                  required
                 />
               </div>
               <div className="search">
@@ -201,6 +202,7 @@ const Cart = () => {
                   type="number"
                   name="phone"
                   placeholder="телефон"
+                  required
                 />
               </div>
               <div className="search">
@@ -208,6 +210,7 @@ const Cart = () => {
                   value={data.fname}
                   onChange={handleChange}
                   type="text"
+                  required
                   name="fname"
                   placeholder="Электронная почта"
                 />
@@ -225,10 +228,11 @@ const Cart = () => {
                     type="text"
                     placeholder="Адрес доставки"
                     name="fname"
+                    required
                   />
                 </div>
                 <textarea name="" id="" placeholder="Комментарий"></textarea>
-                <button>dsa</button>
+                <button>Send</button>
               </form>
             </div>
           </div>
@@ -239,7 +243,7 @@ const Cart = () => {
           <h1>Оплата</h1>
           <div className="total">
             <p>
-              Товары.............................................
+              Товары............................................
               <span>{total}₽</span>
             </p>
             <p>
