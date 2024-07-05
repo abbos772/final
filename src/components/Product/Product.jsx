@@ -69,8 +69,9 @@ const Product = ({ data, isLoading }) => {
         </div>
         <div className="product_boxes">{Products}</div>
       </div>
-
-      <button className="btn_0">Все товары</button>
+      <Link to={"/allproducts"}>
+        <button className="btn_0">Все товары</button>
+      </Link>
     </div>
   );
 };

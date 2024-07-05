@@ -7,6 +7,7 @@ import Img2 from "./img/img2.svg";
 import Img3 from "./img/img3.svg";
 import Img4 from "./img/img4.svg";
 import Img5 from "./img/img5.svg";
+import { Link } from "react-router-dom";
 
 const Caralog = () => {
   return (
@@ -14,9 +15,11 @@ const Caralog = () => {
       <div className="catalog container">
         <div className="catalog_nav">
           <h3>Каталог</h3>
-          <button id="katalog">
-            Весь каталог <GoArrowRight />{" "}
-          </button>
+          <Link to={"/katalogPage"}>
+            <button id="katalog">
+              Весь каталог <GoArrowRight />{" "}
+            </button>
+          </Link>
         </div>
         <div className="carts container">
           <div className="cart1">
@@ -83,7 +86,9 @@ const Caralog = () => {
             <img src={Img5} alt="img.png" className="rasm4" />
           </div>
         </div>
-        <button className="btn_0">Весь каталог</button>
+        <Link to={"/katalogPage"}>
+          <button className="btn_0">Весь каталог</button>
+        </Link>
       </div>
     </>
   );

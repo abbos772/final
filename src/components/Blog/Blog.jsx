@@ -4,13 +4,16 @@ import home from "./img/home1.png";
 import home2 from "./img/home2.png";
 import check from "./img/Vector.png";
 import home3 from "./img/home3.png";
+import { Link } from "react-router-dom";
 const Blog = () => {
   return (
     <div className="container">
       <div className="blog">
         <div className="blog_text">
           <h1>Блог</h1>
-          <button>Перейти в блог</button>
+          <Link to={"/blog"}>
+            <button>Перейти в блог</button>
+          </Link>
         </div>
         <div className="blog_boxes">
           <div className="blog_box">

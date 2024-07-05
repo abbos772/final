@@ -39,10 +39,12 @@ const Header = () => {
                     </Link>
                   </div>
                   <div className="media-btn">
-                    <button>
-                      <RxHamburgerMenu />
-                      Каталог
-                    </button>
+                    <Link to={"/katalogPage"}>
+                      <button>
+                        <RxHamburgerMenu />
+                        Каталог
+                      </button>
+                    </Link>
                   </div>
                   <div className="top__tel">
                     <p>8 (800) 890-46-56</p>
