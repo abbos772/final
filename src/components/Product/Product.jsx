@@ -7,12 +7,20 @@ import { Link } from "react-router-dom";
 import { toggleHeart } from "../context/Heart/HeartSlice";
 import { addToCart } from "../context/Cart/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Skeleton from "../Skeleton/Skeleton";
 
-const Product = ({ data }) => {
+const Product = ({ data, isLoading }) => {
   const dispatch = useDispatch();
   let wishlist = useSelector((s) => s.heart.value);
   const carts = useSelector((s) => s.cart.value);
 
+  if (isLoading) {
+    return (
+      <h1 className="Container">
+        <Skeleton />
+      </h1>
+    );
+  }
   const Products = data?.map((el) => (
     <div key={el.id} className="product_box">
       <button onClick={() => dispatch(toggleHeart(el))}>
@@ -55,10 +63,13 @@ const Product = ({ data }) => {
       <div className="product_flex">
         <div className="pro_text">
           <h1>Популярные товары</h1>
-          <button>Все товары</button>
+          <Link to={"/allproducts"}>
+            <button>Все товары</button>
+          </Link>
         </div>
         <div className="product_boxes">{Products}</div>
       </div>
+
       <button className="btn_0">Все товары</button>
     </div>
   );

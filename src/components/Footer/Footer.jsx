@@ -3,6 +3,7 @@ import "./Footer.scss";
 import logo from "./img/logo.png";
 import vica from "./img/visa.png";
 import vk from "./img/vk.png";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="footer">
@@ -21,12 +22,24 @@ const Footer = () => {
         </div>
         <div className="foot2">
           <h3>Покупателям</h3>
-          <p>О компании</p>
-          <p>Доставка и оплата</p>
-          <p>Возврат</p>
-          <p>Гарантии</p>
-          <p>Контакты</p>
-          <p>Блог</p>
+          <Link to={"/kompaniya"}>
+            <p>О компании</p>
+          </Link>
+          <Link to={"/about"}>
+            <p>Доставка и оплата</p>
+          </Link>
+          <Link to={"/return"}>
+            <p>Возврат</p>
+          </Link>
+          <Link to={"/garant"}>
+            <p>Гарантии</p>
+          </Link>
+          <Link to={"/conacts"}>
+            <p>Контакты</p>
+          </Link>
+          <Link to={"/Blog"}>
+            <p>Блог</p>
+          </Link>
         </div>
         <div className="foot2">
           <h3>Товары</h3>

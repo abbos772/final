@@ -19,22 +19,22 @@ const Header = () => {
               <div className="top__list">
                 <ul className={burger ? "show" : ""}>
                   <div className="links">
-                    <Link onClick={() => setBurger((p) => !p)} to="/">
+                    <Link onClick={() => setBurger((p) => !p)} to="/kompaniya">
                       О компании
                     </Link>
                     <Link onClick={() => setBurger((p) => !p)} to="/about">
                       Доставка и оплата
                     </Link>
-                    <Link onClick={() => setBurger((p) => !p)} to="/">
+                    <Link onClick={() => setBurger((p) => !p)} to="/return">
                       Возврат
                     </Link>
-                    <Link onClick={() => setBurger((p) => !p)} to="/">
+                    <Link onClick={() => setBurger((p) => !p)} to="/garant">
                       Гарантии
                     </Link>
-                    <Link onClick={() => setBurger((p) => !p)} to="/contact">
+                    <Link onClick={() => setBurger((p) => !p)} to="/conacts">
                       Контакты
                     </Link>
-                    <Link onClick={() => setBurger((p) => !p)} to="/">
+                    <Link onClick={() => setBurger((p) => !p)} to="/Blog">
                       Блог
                     </Link>
                   </div>
@@ -68,10 +68,12 @@ const Header = () => {
                 </Link>
               </div>
               <div className="nav__inp">
-                <button>
-                  <RxHamburgerMenu />
-                  Каталог
-                </button>
+                <Link to={"/katalogPage"}>
+                  <button>
+                    <RxHamburgerMenu />
+                    Каталог
+                  </button>
+                </Link>
                 <div className="inp">
                   <input type="text" placeholder="Поиск по товарам" />
                   <CiSearch />

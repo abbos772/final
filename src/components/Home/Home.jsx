@@ -12,7 +12,7 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const { data } = useGetProductsQuery();
+  const { data, isLoading } = useGetProductsQuery();
   return (
     <div>
       <div className="container_hero">
@@ -21,7 +21,7 @@ const Home = () => {
       <div className="container">
         <Katalog />
         <Nornlight />
-        <Product data={data} />
+        <Product data={data} isLoading={isLoading} />
         <Banner />
         <Blog />
       </div>

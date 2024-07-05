@@ -25,6 +25,7 @@ const Cart = () => {
   const [data, setData] = useState(initialState);
   const [messageStatus, setMessageStatus] = useState(null);
   const notify = (message) => toast(message);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const { fname, phone, other } = data;
@@ -43,6 +44,7 @@ const Cart = () => {
 
     fetch(url)
       .then((response) => {
+        console.log("Response status:", response.status);
         if (response.ok) {
           setMessageStatus("success");
           notify("Message sent successfully!");
@@ -51,6 +53,14 @@ const Cart = () => {
           setMessageStatus("error");
           notify("Failed to send message. Please try again later.");
         }
+        return response.json();
+      })
+      .then((data) => {
+        if (data.ok) {
+          console.log("Message data:", data);
+        } else {
+          console.error("Error data:", data);
+        }
       })
       .catch((error) => {
         console.error("Error sending message:", error);
@@ -58,6 +68,7 @@ const Cart = () => {
         notify("Failed to send message. Please try again later.");
       });
   };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData((prevData) => ({
@@ -105,67 +116,137 @@ const Cart = () => {
     }
   };
 
-  let ProductCart =
-    cartItems.length === 0 ? (
-      <div className="empty-cart">
-        <img src={empty} alt="empty cart" />
-        <p>Your cart is empty</p>
-      </div>
-    ) : (
-      <>
-        {cartItems?.map((user) => (
-          <div className="user_flex" key={user.id}>
-            <div className="users">
-              <div className="user_img">
-                <img src={user.img} width={60} alt={user.title} />
-              </div>
-              <div className="title_and_price">
-                <h3>{user.title}</h3>
-                <h2>{user.price * user.quantity}₽</h2>{" "}
-              </div>
-              <div className="decs">
-                <p>{user.desc}</p>
-              </div>
-              <div className="code">
-                <p>RAD-COMBO-50/XXX/230/XXX/XXX/S4/XS</p>
-              </div>
-              <div className="count">
-                <button onClick={() => handleIncrement(user)}>+</button>
-                <span>{user.quantity}</span>
-                <button onClick={() => handleDecrement(user)}>-</button>
-              </div>
-              <div className="delete">
-                <AiOutlineDelete
-                  className="del"
-                  onClick={() => handleRemoveFromCart(user)}
-                />
-              </div>
-            </div>
-          </div>
-        ))}
-      </>
-    );
-
   return (
     <>
       <div className="cart container">
         <div className="kor">
           <h1>Корзина</h1>
         </div>
-        <div className="cart_box">
-          <div className="cart_top">
-            <div className="top_text_1">
-              <p>Фото</p>
-              <p>Товары</p>
-            </div>
-            <div className="top_text_2">
-              <p>Описание</p>
-              <p>Артикул</p>
-              <p className="pp">Количество</p>
-            </div>
+        {cartItems.length === 0 ? (
+          <div
+            className="empty-cart"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+              gap: "10px",
+            }}
+          >
+            <img src={empty} alt="empty cart" />
+            <p>Your cart is empty</p>
           </div>
-          <div>{ProductCart}</div>
-        </div>
+        ) : (
+          <>
+            <div className="cart_box">
+              <div className="cart_top">
+                <div className="top_text_1">
+                  <p>Фото</p>
+                  <p>Товары</p>
+                </div>
+                <div className="top_text_2">
+                  <p>Описание</p>
+                  <p>Артикул</p>
+                  <p className="pp">Количество</p>
+                </div>
+              </div>
+              <div>
+                {cartItems?.map((user) => (
+                  <div className="user_flex" key={user.id}>
+                    <div className="users">
+                      <div className="user_img">
+                        <img src={user.img} width={60} alt={user.title} />
+                      </div>
+                      <div className="title_and_price">
+                        <h3>{user.title}</h3>
+                        <h2>{user.price * user.quantity}₽</h2>{" "}
+                      </div>
+                      <div className="decs">
+                        <p>{user.desc}</p>
+                      </div>
+                      <div className="code">
+                        <p>RAD-COMBO-50/XXX/230/XXX/XXX/S4/XS</p>
+                      </div>
+                      <div className="count">
+                        <button onClick={() => handleIncrement(user)}>+</button>
+                        <span>{user.quantity}</span>
+                        <button onClick={() => handleDecrement(user)}>-</button>
+                      </div>
+                      <div className="delete">
+                        <AiOutlineDelete
+                          className="del"
+                          onClick={() => handleRemoveFromCart(user)}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="oformit container">
+              <div className="oformit_box">
+                <h1>Оформление</h1>
+                <div className="inputs_flex">
+                  <form onSubmit={handleSubmit} action="">
+                    <div className="search">
+                      <input
+                        value={data.fname}
+                        onChange={handleChange}
+                        type="text"
+                        name="fname"
+                        placeholder="ФИО"
+                        required
+                      />
+                    </div>
+                    <div className="search">
+                      <input
+                        value={data.phone}
+                        onChange={handleChange}
+                        type="number"
+                        name="phone"
+                        placeholder="телефон"
+                        required
+                      />
+                    </div>
+                    <div className="search">
+                      <input
+                        value={data.other}
+                        onChange={handleChange}
+                        type="text"
+                        required
+                        name="other"
+                        placeholder="Электронная почта"
+                      />
+                    </div>
+                  </form>
+                </div>
+                <div className="Dostavka">
+                  <h1>Доставка</h1>
+                  <div className="inputs_flex2">
+                    <form onSubmit={handleSubmit} action="">
+                      <div className="search2">
+                        <input
+                          value={data.fname}
+                          onChange={handleChange}
+                          type="text"
+                          placeholder="Адрес доставки"
+                          name="fname"
+                          required
+                        />
+                      </div>
+                      <textarea
+                        name=""
+                        id=""
+                        placeholder="Комментарий"
+                      ></textarea>
+                      <button>Send</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
 
         {showModal && (
           <div className="modal-overlay">
@@ -180,102 +261,47 @@ const Cart = () => {
           </div>
         )}
       </div>
-      <div className="oformit container">
-        <div className="oformit_box">
-          <h1>Оформление</h1>
-          <div className="inputs_flex">
-            <form onSubmit={handleSubmit} action="">
-              <div className="search">
-                <input
-                  value={data.fname}
-                  onChange={handleChange}
-                  type="text"
-                  name="fname"
-                  placeholder="ФИО"
-                  required
-                />
+      {cartItems.length > 0 && (
+        <div className="container">
+          <div className="oplataa container">
+            <h1>Оплата</h1>
+            <div className="total">
+              <p>
+                Товары............................................
+                <span>{total}₽</span>
+              </p>
+              <p>
+                Доставка.............................................. Бесплатно
+              </p>
+            </div>
+            <div className="checks">
+              <div className="ch">
+                <input type="radio" />
+                <p>Картой онлайн</p>
               </div>
-              <div className="search">
-                <input
-                  value={data.phone}
-                  onChange={handleChange}
-                  type="number"
-                  name="phone"
-                  placeholder="телефон"
-                  required
-                />
+              <div className="ch">
+                <input type="radio" />
+                <p>Наличными при получении</p>
               </div>
-              <div className="search">
-                <input
-                  value={data.fname}
-                  onChange={handleChange}
-                  type="text"
-                  required
-                  name="fname"
-                  placeholder="Электронная почта"
-                />
-              </div>
-            </form>
-          </div>
-          <div className="Dostavka">
-            <h1>Доставка</h1>
-            <div className="inputs_flex2">
-              <form onSubmit={handleSubmit} action="">
-                <div className="search2">
-                  <input
-                    value={data.fname}
-                    onChange={handleChange}
-                    type="text"
-                    placeholder="Адрес доставки"
-                    name="fname"
-                    required
-                  />
+            </div>
+            <div className="big_total">
+              <h1>
+                Итого: <span>{discountedTotal}₽</span>
+              </h1>
+              <div className="total_btn">
+                <button>Купить</button>
+                <div className="check">
+                  <input type="radio" name="" id="" />
+                  <p>Я согласен наобработку моих персональных данных</p>
                 </div>
-                <textarea name="" id="" placeholder="Комментарий"></textarea>
-                <button>Send</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="container">
-        <div className="oplataa container">
-          <h1>Оплата</h1>
-          <div className="total">
-            <p>
-              Товары............................................
-              <span>{total}₽</span>
-            </p>
-            <p>
-              Доставка.............................................. Бесплатно
-            </p>
-          </div>
-          <div className="checks">
-            <div className="ch">
-              <input type="radio" />
-              <p>Картой онлайн</p>
-            </div>
-            <div className="ch">
-              <input type="radio" />
-              <p>Наличными при получении</p>
-            </div>
-          </div>
-          <div className="big_total">
-            <h1>
-              Итого: <span>{discountedTotal}₽</span>
-            </h1>
-            <div className="total_btn">
-              <button>Купить</button>
-              <div className="check">
-                <input type="radio" name="" id="" />
-                <p>Я согласен наобработку моих персональных данных</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       <ToastContainer />
     </>
   );
 };
+
 export default memo(Cart);
