@@ -67,7 +67,7 @@ const Wishes = () => {
             className="product_boxes"
             style={{
               display: "flex",
-
+              justifyContent: "flex-start",
               gap: "15px",
             }}
           >

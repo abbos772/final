@@ -5,7 +5,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    #katalog {
+      width: 220px;
+      height: 50px;
+      box-sizing: border-box;
+      border: 1px solid rgb(69, 69, 69);
+      border-radius: 100px;
+      background: white;
+      cursor: pointer;
+    }
     h3 {
       font-family: Manrope;
       font-size: 40px;

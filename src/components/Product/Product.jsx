@@ -2,25 +2,25 @@ import React from "react";
 import "./Product.scss";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { toggleHeart } from "../context/Heart/HeartSlice";
-import { addToCart } from "../context/Cart/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Skeleton from "../Skeleton/Skeleton";
+import { toggleHeart } from "../context/Heart/HeartSlice";
+import { addToCart } from "../context/Cart/CartSlice";
 
 const Product = ({ data, isLoading }) => {
   const dispatch = useDispatch();
-  let wishlist = useSelector((s) => s.heart.value);
-  const carts = useSelector((s) => s.cart.value);
+  const wishlist = useSelector((state) => state.heart.value);
+  const carts = useSelector((state) => state.cart.value);
 
   if (isLoading) {
     return (
-      <h1 className="Container">
+      <div className="Container">
         <Skeleton />
-      </h1>
+      </div>
     );
   }
+
   const Products = data?.map((el) => (
     <div key={el.id} className="product_box">
       <button onClick={() => dispatch(toggleHeart(el))}>
@@ -50,7 +50,7 @@ const Product = ({ data, isLoading }) => {
             {carts.some((item) => item.id === el.id) ? (
               <IoCartOutline className="svg" />
             ) : (
-              <AiOutlineShoppingCart className="svg" />
+              <IoCartOutline className="svg" />
             )}
           </button>
         </div>

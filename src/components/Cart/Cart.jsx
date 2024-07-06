@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { AiOutlineDelete } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-import empty from "./empty.png";
+import empty from "./empty-cart.png";
 import "./Cart.scss";
 import {
   incrementCartQuantity,
   removeFromCart,
   decrementCart,
+  clearCart, // Import the clearCart action
 } from "../context/Cart/CartSlice";
 
 const botToken = "6714877771:AAHjhYSI1QCXr74V76owsIhEJN-FA_pjvhE";
@@ -19,6 +19,7 @@ const initialState = {
   fname: "",
   phone: "",
   other: "",
+  lname: "",
 };
 
 const Cart = () => {
@@ -28,14 +29,14 @@ const Cart = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { fname, phone, other } = data;
+    const { fname, lname, phone, other } = data;
 
     if (!fname || !phone) {
       notify("Please fill out first name and phone.");
       return;
     }
 
-    const text = `First Name: ${fname}\nPhone: ${phone}\nEmail: ${other}`;
+    const text = `First Name: ${fname} Lname:${lname}\nPhone: ${phone}\nEmail: ${other}`;
     const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
       text
     )}`;
@@ -49,6 +50,7 @@ const Cart = () => {
           setMessageStatus("success");
           notify("Message sent successfully!");
           setData(initialState);
+          dispatch(clearCart()); // Clear the cart after successful message send
         } else {
           setMessageStatus("error");
           notify("Failed to send message. Please try again later.");
@@ -226,11 +228,11 @@ const Cart = () => {
                     <form onSubmit={handleSubmit} action="">
                       <div className="search2">
                         <input
-                          value={data.fname}
+                          value={data.lname}
                           onChange={handleChange}
                           type="text"
                           placeholder="Адрес доставки"
-                          name="fname"
+                          name="lname"
                           required
                         />
                       </div>
