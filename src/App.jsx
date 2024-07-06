@@ -16,9 +16,9 @@ import Kon from "./components/Kontact/Kon";
 import BigBlog from "./components/BigBlog/BigBlog";
 import AllPro from "./components/AllPro/AllPro";
 import KatalogPage from "./components/KatalogPage/KatalogPage";
-// import Auth from "./components/Auth/Auth";
-// import Admin from "./pages/Admin/Admin";
-// import Login from "./pages/Login/Login";
+import Auth from "./components/Auth/Auth";
+import Admin from "./pages/Admin/Admin";
+import Login from "./pages/Login/Login";
 function App() {
   return (
     <>
@@ -38,10 +38,10 @@ function App() {
         <Route path="/product/:id" element={<SinglePage />} />
         <Route path="/allproducts" element={<AllPro />} />
         <Route path="/katalogPage" element={<KatalogPage />} />
-        {/* <Route path="/" element={<Auth />}>
+        <Route path="/" element={<Auth />}>
           <Route path="admin" element={<Admin />} />
         </Route>
-        <Route path="/login" element={<Login />} /> */}
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </>
