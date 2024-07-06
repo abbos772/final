@@ -11,7 +11,6 @@ import { useLocation } from "react-router-dom";
 import Search from "../Search/Search";
 
 const Header = () => {
-  const { pathname } = useLocation();
   const [burger, setBurger] = useState(false);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const carts = useSelector((state) => state.cart.value);
@@ -19,6 +18,10 @@ const Header = () => {
   const { data } = useGetProductsQuery();
   const [searchValue, setSearchValue] = useState("");
   const [filterData, setFilterData] = useState([]);
+  let { pathname } = useLocation();
+  if(pathname.includes('/login') || pathname.includes('/admin')){
+    return <></>
+  } 
 
   useEffect(() => {
     if (data) {

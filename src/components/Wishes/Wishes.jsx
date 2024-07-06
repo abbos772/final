@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { toggleHeart } from "../context/Heart/HeartSlice";
 import { IoCartOutline } from "react-icons/io5";
 import emty from "./emty.png";
+import Footer from "../Footer/Footer";
 
 const Wishes = () => {
   const wishlist = useSelector((state) => state.heart.value);
@@ -76,6 +77,8 @@ const Wishes = () => {
         </div>
         <button className="btn_0">Все товары</button>
       </div>
+      <Footer />
+    
     </>
   );
 };

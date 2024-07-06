@@ -11,5 +11,6 @@ export const useGetInputValue = (initialState) => {
   return {
     formData,
     handleChange,
+    setFormData
   };
 };

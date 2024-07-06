@@ -1,7 +1,9 @@
 import React from "react";
 import "../About/About.scss";
+import Footer from "../Footer/Footer";
 const Return = () => {
   return (
+ <>
     <div className="container">
       <p
         style={{
@@ -47,7 +49,10 @@ const Return = () => {
           </p>
         </div>
       </div>
+      
     </div>
+    <Footer />
+ </>
   );
 };
 

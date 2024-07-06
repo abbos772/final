@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.scss";
+import Footer from "../Footer/Footer";
 const Dostavka = () => {
   return (
     <>
@@ -70,6 +71,7 @@ const Dostavka = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

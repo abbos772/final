@@ -13,16 +13,14 @@ const Login = () => {
   let dispatch = useDispatch();
   let navigate = useNavigate();
 
-  let isLogin = useSelector((state) => state.auth.token);
+  // let isLogin = useSelector((state) => state.auth.token);
+  // useEffect(() => {
+  //   if (isLogin == "fake-token") {
+  //     navigate("/admin");
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    if (isLogin == "fake-token") {
-      navigate("/admin");
-    }
-  }, []);
-
-  const { formData, handleChange, setFormData } =
-    useGetInputValue(initialState);
+  const { formData, handleChange, setFormData } = useGetInputValue(initialState);
 
   const handleLogin = (e) => {
     e.preventDefault();

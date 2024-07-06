@@ -4,6 +4,7 @@ import home from "../Blog/img/home1.png";
 import home2 from "../Blog/img/home2.png";
 import check from "../Blog/img/Vector.png";
 import home3 from "../Blog/img/home3.png";
+import Footer from "../../components/Footer/Footer"
 const BigBlog = () => {
   return (
     <div>
@@ -132,6 +133,7 @@ const BigBlog = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

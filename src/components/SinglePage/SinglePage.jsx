@@ -6,6 +6,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import ok from "./img/ok.png";
 import "./SinglePage.scss";
+import Footer from "../Footer/Footer";
 
 const SinglePage = () => {
   let { id } = useParams();
@@ -33,7 +34,9 @@ const SinglePage = () => {
   };
 
   return (
-    <div className="container">
+ <>
+ 
+ <div className="container">
       <div className="text_global">
         <p>{`Главная >`}</p>
       </div>
@@ -155,6 +158,8 @@ const SinglePage = () => {
         </div>
       </div>
     </div>
+      <Footer />
+ </>
   );
 };
 

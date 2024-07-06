@@ -4,6 +4,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import empty from "./empty-cart.png";
+import Footer from '../../components/Footer/Footer'
 import "./Cart.scss";
 import {
   incrementCartQuantity,
@@ -302,6 +303,7 @@ const Cart = () => {
         </div>
       )}
       <ToastContainer />
+      <Footer/>
     </>
   );
 };

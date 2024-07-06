@@ -19,6 +19,10 @@ import KatalogPage from "./components/KatalogPage/KatalogPage";
 import Auth from "./components/Auth/Auth";
 import Admin from "./pages/Admin/Admin";
 import Login from "./pages/Login/Login";
+import MangeProduct from "./pages/Admin/MangeProduct/MangeProduct";
+import MangeCategory from "./pages/Admin/MangeCategory/MangeCategory";
+import CreateProduct from "./pages/Admin/Create/Create";
+
 function App() {
   return (
     <>
@@ -33,15 +37,19 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/garant" element={<Garant />} />
         <Route path="/return" element={<Return />} />
-        <Route path="/conacts" element={<Kon />} />
+        <Route path="/contacts" element={<Kon />} />
         <Route path="/blog" element={<BigBlog />} />
         <Route path="/product/:id" element={<SinglePage />} />
         <Route path="/allproducts" element={<AllPro />} />
         <Route path="/katalogPage" element={<KatalogPage />} />
-        <Route path="/" element={<Auth />}>
-          <Route path="admin" element={<Admin />} />
-        </Route>
         <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Auth />}>
+          <Route path="admin" element={<Admin />}>
+            <Route path="mange-product" element={<MangeProduct />} />
+            <Route path="create-product" element={<CreateProduct />} />
+            <Route path="mange-category" element={<MangeCategory />} />
+          </Route>
+        </Route>
       </Routes>
       <Footer />
     </>

@@ -7,6 +7,7 @@ import Product from "../Product/Product";
 import Banner from "../Banner/Banner";
 import Blog from "../Blog/Blog";
 import { useGetProductsQuery } from "../context/api/ProductApi";
+import Footer from "../Footer/Footer";
 const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -25,6 +26,7 @@ const Home = () => {
         <Banner />
         <Blog />
       </div>
+      <Footer />
     </div>
   );
 };

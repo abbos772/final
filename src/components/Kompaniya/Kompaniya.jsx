@@ -3,6 +3,7 @@ import "./Kom.scss";
 import "../Banner/Banner.scss";
 import Banner from "../Banner/Banner";
 import Blog from "../Blog/Blog";
+import Footer from '../../components/Footer/Footer'
 
 const Kompaniya = () => {
   return (
@@ -68,6 +69,7 @@ const Kompaniya = () => {
       </div>
       <Banner />
       <Blog />
+      <Footer />
     </>
   );
 };

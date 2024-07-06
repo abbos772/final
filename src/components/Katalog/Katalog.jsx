@@ -90,7 +90,8 @@ const Caralog = () => {
           <button className="btn_0">Весь каталог</button>
         </Link>
       </div>
-    </>
+      
+          </>
   );
 };
 

@@ -13,9 +13,11 @@ import img9 from "./img/img9.svg";
 import img10 from "./img/img10.svg";
 import Banner from "../Banner/Banner";
 import Blog from "../Blog/Blog";
+import Footer from "../Footer/Footer";
 const KatalogPage = () => {
   return (
-    <div className="container">
+<>
+<div className="container">
       <div className="nav_top_kat">
         <p>Светильники</p>
         <p>Люстры</p>
@@ -140,7 +142,10 @@ const KatalogPage = () => {
       </div>
       <Banner />
       <Blog />
+    
     </div>
+      <Footer />
+</>
   );
 };
 
