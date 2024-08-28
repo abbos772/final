@@ -4,13 +4,13 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import empty from "./empty-cart.png";
-import Footer from '../../components/Footer/Footer'
+import Footer from "../../components/Footer/Footer";
 import "./Cart.scss";
 import {
   incrementCartQuantity,
   removeFromCart,
   decrementCart,
-  clearCart, // Import the clearCart action
+  clearCart,
 } from "../context/Cart/CartSlice";
 
 const botToken = "6714877771:AAHjhYSI1QCXr74V76owsIhEJN-FA_pjvhE";
@@ -51,7 +51,7 @@ const Cart = () => {
           setMessageStatus("success");
           notify("Message sent successfully!");
           setData(initialState);
-          dispatch(clearCart()); // Clear the cart after successful message send
+          dispatch(clearCart());
         } else {
           setMessageStatus("error");
           notify("Failed to send message. Please try again later.");
@@ -242,7 +242,7 @@ const Cart = () => {
                         id=""
                         placeholder="Комментарий"
                       ></textarea>
-                      <button>Send</button>
+                      <button type="submit">Send</button>
                     </form>
                   </div>
                 </div>
@@ -279,12 +279,12 @@ const Cart = () => {
             </div>
             <div className="checks">
               <div className="ch">
-                <input type="radio" />
-                <p>Картой онлайн</p>
+                <input type="radio" name="payment" id="online" />
+                <label htmlFor="online">Картой онлайн</label>
               </div>
               <div className="ch">
-                <input type="radio" />
-                <p>Наличными при получении</p>
+                <input type="radio" name="payment" id="cash" />
+                <label htmlFor="cash">Наличными при получении</label>
               </div>
             </div>
             <div className="big_total">
@@ -294,8 +294,10 @@ const Cart = () => {
               <div className="total_btn">
                 <button>Купить</button>
                 <div className="check">
-                  <input type="radio" name="" id="" />
-                  <p>Я согласен наобработку моих персональных данных</p>
+                  <input type="checkbox" id="consent" />
+                  <label htmlFor="consent">
+                    Я согласен на обработку моих персональных данных
+                  </label>
                 </div>
               </div>
             </div>
@@ -303,7 +305,7 @@ const Cart = () => {
         </div>
       )}
       <ToastContainer />
-      <Footer/>
+      <Footer />
     </>
   );
 };

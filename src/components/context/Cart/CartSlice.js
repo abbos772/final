@@ -11,31 +11,31 @@ const cartSlice = createSlice({
     addToCart: (state, action) => {
       let index = state.value.findIndex((i) => i.id === action.payload.id);
       if (index < 0) {
-        state.value = [
-          ...state.value,
-          {
-            ...action.payload,
-            quantity: 1,
-          },
-        ];
+        state.value.push({
+          ...action.payload,
+          quantity: 1,
+        });
       } else {
-        state.value = state.value.filter((i) => i.id !== action.payload.id);
+        state.value[index].quantity += 1;
       }
       localStorage.setItem("cart", JSON.stringify(state.value));
     },
 
-    incrementCartQuantity(state, action) {
-      let index = state.value.findIndex((el) => el.id === action.payload.id);
-      state.value = state.value.map((item, inx) => {
-        if (index === inx) {
-          return {
-            ...item,
-            quantity: item.quantity + 1,
-          };
-        } else {
-          return item;
-        }
-      });
+    incrementCartQuantity: (state, action) => {
+      let index = state.value.findIndex((el) => el.id === action.payload);
+      if (index >= 0) {
+        state.value[index].quantity += 1;
+      }
+      localStorage.setItem("cart", JSON.stringify(state.value));
+    },
+
+    decrementCart: (state, action) => {
+      let index = state.value.findIndex((i) => i.id === action.payload);
+      if (index >= 0 && state.value[index].quantity > 1) {
+        state.value[index].quantity -= 1;
+      } else {
+        state.value = state.value.filter((i) => i.id !== action.payload);
+      }
       localStorage.setItem("cart", JSON.stringify(state.value));
     },
 
@@ -44,35 +44,25 @@ const cartSlice = createSlice({
       localStorage.setItem("cart", JSON.stringify(state.value));
     },
 
-    decrementCart: (state, action) => {
-      let index = state.value.findIndex((i) => i.id === action.payload.id);
-      state.value = state.value.map((item, inx) =>
-        inx === index
-          ? {
-              ...item,
-              quantity: item.quantity - 1,
-            }
-          : item
-      );
-      localStorage.setItem("cart", JSON.stringify(state.value));
-    },
-
     deleteAllCart: (state) => {
       state.value = [];
       localStorage.removeItem("cart");
     },
+
     clearCart: (state) => {
       state.value = [];
+      localStorage.removeItem("cart");
     },
   },
 });
 
 export const {
-  clearCart,
   addToCart,
   removeFromCart,
+  incrementCartQuantity,
   decrementCart,
   deleteAllCart,
-  incrementCartQuantity,
+  clearCart,
 } = cartSlice.actions;
+
 export default cartSlice.reducer;
